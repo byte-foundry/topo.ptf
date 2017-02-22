@@ -12,6 +12,16 @@ exports.controls = [
 		minAdvised: 0
 		maxAdvised: 1.1
 		disabled: false
+	,
+		name: 'diacriticHeight'
+		label: 'Diacritic Position'
+		min: -5
+		max: 150
+		step: 1
+		init: 85
+		minAdvised: 50
+		maxAdvised: 90
+		disabled: false
 	]
 ,
 	tab: true
@@ -56,7 +66,7 @@ exports.controls = [
 		min: 50
 		max: 800
 		step: 1
-		init: 230
+		init: 220
 		minAdvised: 50
 		maxAdvised: 500
 		disabled: false
@@ -127,7 +137,7 @@ exports.controls = [
 		min: 40
 		max: 160
 		step: 1
-		init: 100
+		init: 101
 		minAdvised: 80
 		maxAdvised: 120
 		disabled: false

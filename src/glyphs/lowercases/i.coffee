@@ -1,7 +1,7 @@
-exports.glyphs['a'] =
-	unicode: 'a'
-	glyphName: 'a'
-	characterName: 'LATIN SMALL LETTER A'
+exports.glyphs['i'] =
+	unicode: 'i'
+	glyphName: 'i'
+	characterName: 'LATIN SMALL LETTER I'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
@@ -25,13 +25,12 @@ exports.glyphs['a'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + (50/100) * thickness
+					x: spacingLeft + (50/101) * thickness
 					y: 0
-					dirOut: 30 + 'deg'
-					tensionOut: 0
+					typeOut: 'line'
 					expand: Object({
 						width: thickness
-						angle: Math.PI / 2
+						angle: 0 + 'deg'
 						distr: 0.5
 					})
 				1:
@@ -42,3 +41,10 @@ exports.glyphs['a'] =
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
+	components:
+		0:
+			base: 'dot_accent'
+			parentAnchors:
+				0:
+					x: contours[0].nodes[0].x
+					y: xHeight + diacriticHeight
