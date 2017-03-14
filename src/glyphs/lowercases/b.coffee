@@ -104,10 +104,11 @@ exports.glyphs['b'] =
 					})
 				4:
 					x: contours[0].nodes[1].expandedTo[1].x
-					# y: contours[0].nodes[1].expandedTo[1].y
 					y: xHeight - ( 133 / 517 ) * xHeight
-					# dirIn: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[2].expandedTo[0].point ) - Math.PI / 2
-					dirIn: 43 + 'deg'
+					dirIn: Math.max(
+						43 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[4].expandedTo[1].point, contours[1].nodes[3].expandedTo[1].point ) + 30 / 180 * Math.PI
+					)
 					typeOut: 'line'
 					expand: Object({
 						width: ( 70 / 101 ) * thickness
