@@ -73,6 +73,7 @@ exports.glyphs['b'] =
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
+					tensionOut: 1.1
 					expand: Object({
 						width: ( 80 / 101 ) * thickness
 						angle: Math.PI + ( 96 / 180 * Math.PI )
@@ -97,6 +98,8 @@ exports.glyphs['b'] =
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
+					tensionIn: 1.38
+					tensionIn: 1.2
 					expand: Object({
 						width: ( 89 / 101 ) * thickness
 						angle: 180 - 110 + 'deg'
@@ -107,7 +110,7 @@ exports.glyphs['b'] =
 					y: xHeight - ( 133 / 517 ) * xHeight
 					dirIn: Math.max(
 						43 / 180 * Math.PI,
-						Utils.lineAngle( contours[1].nodes[4].expandedTo[1].point, contours[1].nodes[3].expandedTo[1].point ) + 30 / 180 * Math.PI
+						Utils.lineAngle( contours[1].nodes[4].expandedTo[1].point, contours[1].nodes[3].expandedTo[1].point ) + 23 / 180 * Math.PI
 					)
 					typeOut: 'line'
 					expand: Object({

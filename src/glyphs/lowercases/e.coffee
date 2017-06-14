@@ -38,7 +38,7 @@ exports.glyphs['e'] =
 					y: - overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
-					tensionOut: 1.2
+					tensionOut: 1.35
 					expand: Object({
 						width: ( 83 / 101 ) * thickness
 						angle: 90 + 'deg'
@@ -59,7 +59,7 @@ exports.glyphs['e'] =
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
-					tensionIn: 1.1
+					tensionIn: 1.38
 					tensionOut: 1.2
 					expand: Object({
 						width: ( 81 / 101 ) * thickness

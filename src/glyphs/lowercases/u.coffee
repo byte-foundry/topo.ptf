@@ -43,7 +43,7 @@ exports.glyphs['u'] =
 					type: 'smooth'
 					expand: Object({
 						width: ( 103 / 101 ) * thickness
-						angle: 12 + 'deg'
+						angle: 10 + 'deg'
 						distr: 0
 					})
 				2:
@@ -51,10 +51,10 @@ exports.glyphs['u'] =
 					y: - overshoot
 					dirIn: 180 + 'deg'
 					type: 'smooth'
-					tensionIn: 1.1
+					tensionIn: 1.35
 					expand: Object({
 						width: ( 88 / 101 ) * thickness
-						angle: 72 + 'deg'
+						angle: 75 + 'deg'
 						distr: 0
 					})
 				3:

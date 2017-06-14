@@ -83,21 +83,24 @@ exports.glyphs['n'] =
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
+					tensionIn: 1.37
+					tensionOut: 1.1
 					expand: Object({
-						width: ( 89 / 101 ) * thickness
+						width: ( 91 / 101 ) * thickness
 						angle: 180 - 110 + 'deg'
 						distr: 1
 					})
 				3:
 					x: contours[0].nodes[1].expandedTo[1].x
-					y: xHeight - ( 133 / 517 ) * xHeight
+					y: xHeight - ( 127 / 517 ) * xHeight
 					dirIn: Math.max(
 						43 / 180 * Math.PI,
 						Utils.lineAngle( contours[1].nodes[3].expandedTo[1].point, contours[1].nodes[2].expandedTo[1].point ) + 30 / 180 * Math.PI
 					)
+					typeIn: 0.5
 					typeOut: 'line'
 					expand: Object({
-						width: ( 70 / 101 ) * thickness
+						width: ( 58 / 101 ) * thickness
 						angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[2].expandedTo[0].point )
 						distr: 0
 					})

@@ -41,7 +41,7 @@ exports.glyphs['a'] =
 					y: ( 324 / 526 ) * xHeight - (17)
 					dirOut: 180 + 'deg'
 					type: 'smooth'
-					tensionOut: 1.1
+					tensionOut: 1.3
 					expand: Object({
 						width: ( 74 / 101 ) * thickness
 						angle: - 68 / 180 * Math.PI
@@ -63,6 +63,8 @@ exports.glyphs['a'] =
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
+					tensionIn: 1.1
+					tensionOut: 1.3
 					expand: Object({
 						width: ( 83 / 101 ) * thickness
 						angle: 75 + 'deg'
@@ -121,7 +123,7 @@ exports.glyphs['a'] =
 					x: contours[0].nodes[0].expandedTo[0].x + (32/101) * thickness
 					y: xHeight - ( 172 / 526 ) * xHeight
 					dirOut: 90 + 'deg'
-					tensionOut: 1.1
+					tensionOut: 1.3
 					expand: Object({
 						width: ( 97 / 101 ) * thickness
 						angle: 180 - 3 + 'deg'
@@ -133,6 +135,7 @@ exports.glyphs['a'] =
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					tensionIn: 1.1
+					tensionOut: 1.15
 					expand: Object({
 						width: ( 89 / 101 ) * thickness
 						angle: - 102 + 'deg'
@@ -141,7 +144,7 @@ exports.glyphs['a'] =
 				5:
 					x: contours[0].nodes[2].expandedTo[0].x + 45
 					y: xHeight - 20
-					dirIn: 23 + 'deg'
+					dirIn: 29 + 'deg'
 					expand: Object({
 						width: ( 98 / 101 ) * thickness
 						angle: - 90 + 'deg'
