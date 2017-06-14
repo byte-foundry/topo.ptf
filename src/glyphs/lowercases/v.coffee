@@ -29,7 +29,7 @@ exports.glyphs['v'] =
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness
+						width: thickness * Math.max( 1, Math.sqrt( width / 3 ) )
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -37,7 +37,7 @@ exports.glyphs['v'] =
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[1].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: 0
 					expand: Object({
-						width: ( 89 / 101 ) * thickness
+						width: (( 91 / 101 ) * thickness) / Math.cos( Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].point ) + Math.PI / 2 )
 						angle: 0 + 'deg'
 						distr: 0.93
 					})
@@ -50,7 +50,7 @@ exports.glyphs['v'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: ( 89 / 101 ) * thickness
+						width: contours[0].nodes[1].expand.width
 						angle: 180 + 'deg'
 						distr: 0.93
 					})
@@ -61,7 +61,7 @@ exports.glyphs['v'] =
 					)
 					y: xHeight
 					expand: Object({
-						width: thickness
+						width: thickness * Math.max( 1, Math.sqrt( width / 3 ) )
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
