@@ -3,7 +3,10 @@ exports.glyphs['l'] =
 	glyphName: 'l'
 	characterName: 'LATIN SMALL LETTER L'
 	ot:
-		advanceWidth: contours[0].nodes[3].x + spacingRight
+		advanceWidth: Math.max(
+			contours[0].nodes[3].x,
+			contours[0].nodes[0].expandedTo[1].x + spacingLeft
+		) + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
@@ -59,7 +62,7 @@ exports.glyphs['l'] =
 				3:
 					x: Math.max(
 						contours[0].nodes[0].expandedTo[0].x + 14 + 200 * width,
-						contours[0].nodes[0].expandedTo[1].x + 10
+						contours[0].nodes[0].expandedTo[1].x + 40
 					)
 					y: 0
 					dirIn: - 165 + 'deg'

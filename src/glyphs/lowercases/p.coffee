@@ -1,32 +1,28 @@
-exports.glyphs['b'] =
-	unicode: 'b'
-	glyphName: 'b'
-	characterName: 'LATIN SMALL LETTER B'
+exports.glyphs['p'] =
+	unicode: 'p'
+	glyphName: 'p'
+	characterName: 'LATIN SMALL LETTER P'
 	ot:
 		advanceWidth: contours[1].nodes[2].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 58 + (20)
-		spacingRight: 50 * spacing + 55
+		spacingLeft: 50 * spacing + 58
+		spacingRight: 50 * spacing + 54
 	tags: [
 		'all',
 		'latin',
 		'lowercase'
 	]
-	anchors:
-		0:
-			x: 0
-			y: 0
 	contours:
 		0:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[1].x
-					y: 23
+					x: spacingLeft + (25/101) * thickness
+					y: descender
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
@@ -34,25 +30,24 @@ exports.glyphs['b'] =
 						distr: 0.25
 					})
 				1:
-					x: spacingLeft + (25/101) * thickness
-					y: Math.max(
-						contours[1].nodes[1].y + ( contours[1].nodes[1].expand.width * Math.sin( contours[1].nodes[1].expand.angle - Math.PI ) ) + 10,
-						contours[0].nodes[0].y + ( 56 / 101 ) * thickness
-					)
-					y: contours[0].nodes[0].y + ( 56 / 101 ) * thickness
-					typeOut: 'line'
+					x: contours[0].nodes[0].x
+					y: ( 349 / 517 ) * xHeight
 					expand: Object({
 						width: thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				2:
-					x: contours[0].nodes[1].x
-					y: ascenderHeight
+					x: contours[0].nodes[0].expandedTo[0].x - ( 20 / 101 ) * thickness
+					y: xHeight
+					dirIn: Math.max(
+						- 80 / 180 * Math.PI,
+						Utils.lineAngle( contours[0].nodes[2].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )
+					)
 					expand: Object({
-						width: thickness
+						width: ( 90 / 101 ) * thickness
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0
 					})
 		1:
 			skeleton: true
@@ -60,12 +55,15 @@ exports.glyphs['b'] =
 			nodes:
 				0:
 					x: contours[0].nodes[1].expandedTo[1].x
-					y: contours[0].nodes[1].expandedTo[1].y
-					dirOut: - 21 + 'deg'
+					y: Math.max(
+						( 82 / 526 ) * xHeight,
+						contours[1].nodes[1].y - Math.cos( Math.PI / 2 + contours[1].nodes[1].expand.angle - Math.PI ) * contours[1].nodes[1].expand.width + ( 10 / 101 ) * thickness
+					)
+					dirOut: Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].point ) - ( 20 / 180 * Math.PI )
 					type: 'smooth'
 					expand: Object({
-						width: ( 115 / 101 ) * thickness
-						angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[0].expandedTo[0].point )
+						width: ( 86 / 101 ) * thickness
+						angle: - 134 / 180 * Math.PI
 						distr: 0
 					})
 				1:
@@ -73,7 +71,6 @@ exports.glyphs['b'] =
 					y: - overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
-					tensionOut: 1.1
 					expand: Object({
 						width: ( 80 / 101 ) * thickness
 						angle: Math.PI + ( 96 / 180 * Math.PI )
@@ -86,8 +83,6 @@ exports.glyphs['b'] =
 					)
 					y: ( 295 / 526 ) * xHeight + (0)
 					type: 'smooth'
-					tensionIn: 1.3
-					tensionOut: 1.3
 					expand: Object({
 						width: ( 103 / 101 ) * thickness
 						angle: 0 + 'deg'
@@ -98,8 +93,8 @@ exports.glyphs['b'] =
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
-					tensionIn: 1.38
 					tensionIn: 1.2
+					tensionOut: 1.2
 					expand: Object({
 						width: ( 89 / 101 ) * thickness
 						angle: 180 - 110 + 'deg'
