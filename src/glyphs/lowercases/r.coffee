@@ -62,11 +62,12 @@ exports.glyphs['r'] =
 						contours[0].nodes[0].expandedTo[0].x + ( 30 + ( 33 / 101 ) * thickness ) + 200 * width,
 						contours[0].nodes[0].expandedTo[1].x + 80
 					)
-					y: xHeight + overshoot - 5
+					y: xHeight + overshoot - 7
 					type: 'smooth'
-					dirOut: 150 + 'deg'
+					tensionOut: 0.9
+					dirOut: 165 + 'deg'
 					expand: Object({
-						width: ( 120 / 101 ) * thickness
+						width: ( 108 / 103 ) * thickness
 						angle: 180 - 90 + 'deg'
 						distr: 1
 					})
@@ -75,9 +76,11 @@ exports.glyphs['r'] =
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
+					tensionOut: 1.3
+					tensionIn: 1.1
 					expand: Object({
 						width: ( 104 / 101 ) * thickness
-						angle: (180 - 102) / 180 * Math.PI
+						angle: (180 - 98) / 180 * Math.PI
 						distr: 1
 					})
 				2:
@@ -89,7 +92,7 @@ exports.glyphs['r'] =
 					dirIn: 48 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: ( 60 / 101 ) * thickness
+						width: ( 63 / 101 ) * thickness
 						angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[0].nodes[2].expandedTo[0].point )
 						distr: 0
 					})
