@@ -96,7 +96,7 @@ exports.controls = [
 	,
 		name: 'width'
 		label: 'Width'
-		min: 0.4
+		min: 0.7
 		max: 5
 		step: 0.01
 		init: 1
@@ -121,7 +121,7 @@ exports.controls = [
 		min: 0
 		max: 20
 		step: 1
-		init: 10
+		init: 12
 		minAdvised: 0
 		maxAdvised: 20
 		disabled: false
@@ -135,7 +135,7 @@ exports.controls = [
 		name: 'thickness'
 		label: 'Thickness'
 		min: 40
-		max: 160
+		max: 145
 		step: 1
 		init: 101
 		minAdvised: 80

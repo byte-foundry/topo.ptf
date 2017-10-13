@@ -30,10 +30,10 @@ exports.glyphs['f'] =
 						contours[0].nodes[3].expandedTo[1].x + ( 60 + ( 20 / 101 ) * thickness )
 					)
 					y: ascenderHeight
-					dirOut: 165 + 'deg'
+					dirOut: Utils.lineAngle( contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ) - 11 / 180 * Math.PI
 					type: 'smooth'
 					expand: Object({
-						width: ( 83 / 101 ) * thickness
+						width: ( 86 / 101 ) * thickness
 						angle: - 90 + 'deg'
 						distr: 0
 					})

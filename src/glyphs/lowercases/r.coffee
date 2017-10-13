@@ -65,9 +65,9 @@ exports.glyphs['r'] =
 					y: xHeight + overshoot - 7
 					type: 'smooth'
 					tensionOut: 0.9
-					dirOut: 165 + 'deg'
+					dirOut: Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ) - 13 / 180 * Math.PI
 					expand: Object({
-						width: ( 108 / 103 ) * thickness
+						width: ( 119 / 103 ) * thickness
 						angle: 180 - 90 + 'deg'
 						distr: 1
 					})
@@ -89,7 +89,7 @@ exports.glyphs['r'] =
 						xHeight - ( 133 / 517 ) * xHeight,
 						( contours[1].nodes[1].y - Math.cos( - contours[1].nodes[1].expand.angle - Math.PI - Math.PI / 2 ) * contours[1].nodes[1].expand.width ) - 10
 					)
-					dirIn: 48 + 'deg'
+					dirIn: Utils.lineAngle( contours[1].nodes[1].point, contours[1].nodes[2].expandedTo[1].point ) + ( 13 / 180 * Math.PI )
 					typeOut: 'line'
 					expand: Object({
 						width: ( 63 / 101 ) * thickness

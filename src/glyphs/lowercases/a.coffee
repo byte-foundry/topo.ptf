@@ -52,7 +52,7 @@ exports.glyphs['a'] =
 					y: contours[0].nodes[3].y + ( (contours[0].nodes[1].y - 0.25 * (Math.cos( - Math.PI / 2 + contours[0].nodes[1].expand.angle) * contours[0].nodes[1].expand.width )) - contours[0].nodes[3].y ) * 0.5
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
-					tensionIn: 1.1
+					tensionIn: 1.05
 					expand: Object({
 						width: ( 99 / 101 ) * thickness
 						angle: 0 + 'deg'
@@ -80,7 +80,10 @@ exports.glyphs['a'] =
 					type: 'smooth'
 					expand: Object({
 						width: ( 52 / 101 ) * thickness
-						angle: 132 + 'deg'
+						angle: Math.max(
+							Utils.lineAngle( contours[0].nodes[4].point, contours[0].nodes[3].point ) + ( 15 / 180 * Math.PI ),
+							132 / 180 * Math.PI
+						)
 						distr: 1
 					})
 		1:
@@ -143,27 +146,13 @@ exports.glyphs['a'] =
 					})
 				5:
 					x: contours[0].nodes[2].expandedTo[0].x + 45
-					y: xHeight - 20
-					dirIn: 29 + 'deg'
+					y: xHeight - Math.max( 20, ( 20 / 101 ) * thickness )
+					dirIn: Utils.lineAngle( contours[1].nodes[5].point, contours[1].nodes[4].point ) + ( 15 / 180 * Math.PI )
 					expand: Object({
-						width: ( 98 / 101 ) * thickness
+						width: Math.min(
+							( 98 / 101 ) * thickness,
+							( xHeight - 20 ) - contours[0].nodes[1].expandedTo[0].y - 40
+						)
 						angle: - 90 + 'deg'
 						distr: 0
 					})
-		# 2:
-		# 	skeleton: false
-		# 	closed: true
-		# 	nodes:
-		# 		0:
-		# 			x: contours[1].nodes[0].expandedTo[0].x
-		# 			y: contours[1].nodes[0].expandedTo[0].y
-		# 			dirOut: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[2].expandedTo[0].point )
-		# 		1:
-		# 			x: contours[1].nodes[2].expandedTo[0].x
-		# 			y: contours[1].nodes[2].expandedTo[0].y
-		# 			dirIn: - 90 + 'deg'
-		# 			typeOut: 'line'
-		# 		2:
-		# 			x: contours[1].nodes[0].expandedTo[1].x
-		# 			y: contours[1].nodes[0].expandedTo[1].y
-		# 			typeOut: 'line'

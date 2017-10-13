@@ -15,20 +15,20 @@ exports.glyphs['w'] =
 		'latin',
 		'lowercase'
 	]
-	anchors:
-		0:
-			thickness: Math.min(
-				( 78 / 101 ) * thickness,
-				Math.max(
-					( contours[3].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) / 3,
-					30
-				)
-			)
-		1:
-			thickness: Math.min(
-				( 78 / 101 ) * thickness,
-				(( contours[3].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) - 40 * 2) / 3.5 - 5 * width
-			)
+	# anchors:
+	# 	0:
+	# 		thickness: Math.min(
+	# 			( 78 / 101 ) * thickness,
+	# 			Math.max(
+	# 				( contours[3].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) / 3,
+	# 				30
+	# 			)
+	# 		)
+	# 	1:
+	# 		thickness: Math.min(
+	# 			( 78 / 101 ) * thickness,
+	# 			(( contours[3].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) - 40 * 2) / 3.5 - 5 * width
+	# 		)
 	contours:
 		0:
 			skeleton: true
@@ -47,12 +47,13 @@ exports.glyphs['w'] =
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[1].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: 0
 					expand: Object({
-						width: (( 91 / 101 ) * thickness) / Math.cos( Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].point ) + Math.PI / 2 )
+						# width: (( 91 / 101 ) * thickness) / Math.cos( Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].point ) + Math.PI / 2 )
 						width: Math.min(
 							(( 91 / 101 ) * thickness) / Math.cos( Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].point ) + Math.PI / 2 ),
 							( contours[3].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) - ( 105 / 101 ) * thickness * width
 						)
 						angle: 0 + 'deg'
+						distr: Math.max( 0, 1 - ( 0.07 / 101 ) * thickness * opticThickness )
 						distr: 0.93
 					})
 		1:
@@ -70,6 +71,7 @@ exports.glyphs['w'] =
 							( contours[3].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) - ( 105 / 101 ) * thickness * width
 						)
 						angle: 180 + 'deg'
+						distr: Math.max( 0, 1 - ( 0.07 / 101 ) * thickness * opticThickness )
 						distr: 0.93
 					})
 				1:
@@ -98,7 +100,8 @@ exports.glyphs['w'] =
 							( contours[3].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) - ( 105 / 101 ) * thickness * width
 						)
 						angle: 180 + 'deg'
-						distr: 0.07
+						distr: Math.min( 1, ( 0.07 / 101 ) * thickness * opticThickness )
+						dist: 0.07
 					})
 				1:
 					x: contours[1].nodes[1].x
@@ -137,5 +140,6 @@ exports.glyphs['w'] =
 							( contours[3].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) - ( 105 / 101 ) * thickness * width
 						)
 						angle: 0 + 'deg'
-						distr: 0.07
+						distr: Math.min( 1, ( 0.07 / 101 ) * thickness * opticThickness )
+						dist: 0.07
 					})

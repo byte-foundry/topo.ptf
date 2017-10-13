@@ -31,10 +31,7 @@ exports.glyphs['g'] =
 						xHeight - ( 104 / 526 ) * xHeight,
 						contours[0].nodes[1].y - Math.sin( - contours[0].nodes[1].expand.angle ) * contours[0].nodes[1].expand.width - 32
 					)
-					dirOut: Math.max(
-						141 / 180 * Math.PI,
-						Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[0].point ) - 30 / 180 * Math.PI
-					)
+					dirOut: Utils.lineAngle( contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].expandedTo[0].point ) - 25 / 180 * Math.PI
 					type: 'smooth'
 					expand: Object({
 						width: ( 66 / 101 ) * thickness

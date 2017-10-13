@@ -1,19 +1,19 @@
-exports.glyphs['c'] =
-	unicode: 'c'
-	glyphName: 'c'
-	characterName: 'LATIN SMALL LETTER C'
+exports.glyphs['C'] =
+	unicode: 'C'
+	glyphName: 'C'
+	characterName: 'LATIN CAPITAL LETTER C'
 	ot:
-		advanceWidth: contours[0].nodes[4].expandedTo[0].x + spacingRight
+		advanceWidth: contours[0].nodes[0].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 48
-		spacingRight: 50 * spacing + 33
+		spacingLeft: 50 * spacing + 69
+		spacingRight: 50 * spacing + 46
 	tags: [
 		'all',
 		'latin',
-		'lowercase'
+		'uppercase'
 	]
 	anchors:
 		0:
@@ -26,13 +26,13 @@ exports.glyphs['c'] =
 			nodes:
 				0:
 					x: Math.max(
-						contours[0].nodes[2].expandedTo[0].x + ( 120 + ( 33 / 101 ) * thickness ) + 200 * width,
+						contours[0].nodes[2].expandedTo[0].x + ( 200 + ( 39 / 101 ) * thickness ) + 200 * width,
 						contours[0].nodes[2].expandedTo[1].x + 10
 					)
-					y: 14
-					dirOut: - 153 + 'deg'
+					y: 45
+					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point ) + ( 27 / 180 * Math.PI )
 					expand: Object({
-						width: ( 100 / 101 ) * thickness
+						width: ( 94 / 101 ) * thickness * opticThickness
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -42,38 +42,38 @@ exports.glyphs['c'] =
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 83 / 101 ) * thickness
+						width: ( 86 / 101 ) * thickness * opticThickness * contrast
 						angle: 89 + 'deg'
 						distr: 0
 					})
 				2:
-					x: spacingLeft + (25/101) * thickness
-					y: ( 295 / 526 ) * xHeight
+					x: spacingLeft + (26/101) * thickness * opticThickness
+					y: ( 389 / 706 ) * capHeight
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					tensionIn: 1.2
 					tensionOut: 1.2
 					expand: Object({
-						width: ( 102 / 101 ) * thickness
+						width: ( 109 / 101 ) * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				3:
 					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * ( 226 / 359 )
-					y: xHeight + overshoot
+					y: capHeight + ( 15 / 10 ) * overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 84 / 101 ) * thickness
+						width: ( 92 / 101 ) * thickness * opticThickness
 						angle: - 90 + 'deg'
 						distr: 0
 					})
 				4:
 					x: contours[0].nodes[0].expandedTo[0].x + 6
-					y: xHeight - 10
-					dirIn: 155 + 'deg'
+					y: capHeight - 26
+					dirIn: Utils.lineAngle( contours[0].nodes[4].point, contours[0].nodes[3].point ) - ( 15 / 180 * Math.PI )
 					expand: Object({
-						width: ( 100 / 101 ) * thickness
+						width: ( 98 / 101 ) * thickness * opticThickness
 						angle: - 90 + 'deg'
 						distr: 0
 					})
