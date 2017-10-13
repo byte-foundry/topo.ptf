@@ -121,7 +121,7 @@ exports.controls = [
 		min: 0
 		max: 20
 		step: 1
-		init: 10
+		init: 12
 		minAdvised: 0
 		maxAdvised: 20
 		disabled: false

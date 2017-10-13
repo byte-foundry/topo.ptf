@@ -38,7 +38,7 @@ exports.glyphs['c'] =
 					})
 				1:
 					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * ( 219 / 353 )
-					y: - ( 12 / 10 ) * overshoot
+					y: - overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -60,7 +60,7 @@ exports.glyphs['c'] =
 					})
 				3:
 					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[2].expandedTo[0].x ) * ( 226 / 359 )
-					y: xHeight + ( 12 / 10 ) * overshoot
+					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({

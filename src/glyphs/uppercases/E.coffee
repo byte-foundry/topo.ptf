@@ -77,7 +77,7 @@ exports.glyphs['E'] =
 					expand: Object({
 						width: Math.min(
 							( 90 / 101 ) * thickness,
-							( contours[1].nodes[1].expandedTo[1].y - contours[3].nodes[0].expandedTo[1].y ) + 20
+							( contours[1].nodes[1].expandedTo[1].y - contours[3].nodes[0].expandedTo[1].y ) - 50
 						)
 						angle: - 90 + 'deg'
 						distr: 0.5
@@ -88,7 +88,7 @@ exports.glyphs['E'] =
 					expand: Object({
 						width: Math.min(
 							( 90 / 101 ) * thickness,
-							( contours[1].nodes[1].expandedTo[1].y - contours[3].nodes[0].expandedTo[1].y ) + 20
+							( contours[1].nodes[1].expandedTo[1].y - contours[3].nodes[0].expandedTo[1].y ) - 50
 						)
 						angle: - 90 + 'deg'
 						distr: 0.5

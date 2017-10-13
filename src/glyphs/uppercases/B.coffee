@@ -137,7 +137,7 @@ exports.glyphs['B'] =
 						distr: 0.25
 					})
 				3:
-					x: contours[2].nodes[4].x + ( contours[2].nodes[2].expandedTo[1].x - contours[2].nodes[4].x ) * ( 73 / 230 )
+					x: contours[2].nodes[4].x + ( contours[2].nodes[2].expandedTo[1].x - contours[2].nodes[4].x ) * ( 73 / 230 ) * Math.max( 1, Math.sqrt( width * 0.75 ) )
 					y: 0
 					dirIn: 0 + 'deg'
 					type: 'smooth'
